@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int removeElement(int arr[], int size, int key) {
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] != key) {
+            arr[count++] = arr[i];
+        }
+    }
+    return count;
+}
+
+int main() {
+    int arr[] = {3, 2, 2, 3, 4, 5, 3};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int key = 3;
+
+    int newSize = removeElement(arr, size, key);
+    
+    printf("Updated array: ");
+    for (int i = 0; i < newSize; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\nCount: %d\n", newSize);
+
+    return 0;
+}
